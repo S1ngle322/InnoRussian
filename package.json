@@ -1,0 +1,28 @@
+{
+  "name": "InnoRussian",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "prestart": "npm run build",
+    "start": "nodemon --max_old_space_size=2560 -r dotenv/config src/app.ts",
+    "initdata": "npm run build && ts-node -r dotenv/config src/utils/initdataScript.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/express": "^4.16.1",
+    "ts-node": "^9.0.0",
+    "tslint": "^5.12.1",
+    "typescript": "^3.3.3"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.16.4",
+    "nodemon": "^2.0.4",
+    "winston": "^3.3.3"
+  }
+}
