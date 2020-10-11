@@ -1,10 +1,12 @@
 import express from 'express';
 import log from './utils/winston';
+import load from './loader/index';
 
 const startServer = async (): Promise<void> => {
     const app = express();
     app.set('port', process.env.PORT || 3000);
     const host = '0.0.0.0';
+    await load(app);
 
     app.listen(app.get('port'), host, () => {
         log.info(
