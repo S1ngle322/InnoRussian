@@ -15,8 +15,6 @@ export class User extends BaseModel implements Authorizable {
     email: string;
     password: string;
     isVerified: boolean;
-    isRejected: boolean;
-    phone: string;
     type: UserType;
     comparePassword: comparePasswordFunction;
 }
@@ -27,7 +25,6 @@ export const userSchema = new mongoose.Schema(
         email: { type: String, default: "" },
         password: { type: String },
         isVerified: { type: Boolean, default: false },
-        isRejected: { type: Boolean, default: false },
         phone: { type: String, default: "" },
         type: { type: String, required: true, immutable: true },
     },
