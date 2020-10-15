@@ -25,7 +25,6 @@ export const userSchema = new mongoose.Schema(
         email: { type: String, default: "" },
         password: { type: String },
         isVerified: { type: Boolean, default: false },
-        phone: { type: String, default: "" },
         type: { type: String, required: true, immutable: true },
     },
     { discriminatorKey: "type", timestamps: true }
