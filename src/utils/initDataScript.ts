@@ -1,8 +1,10 @@
 import requireDir from "require-dir";
 import UserEnum from "../types/enums/UserEnum";
 import UserModel from "../models/User";
+import AdminModel from "../models/Admin";
 import log from "./winston";
 import mongooseLoader from "../loader/mongooseLoader";
+import SuperAdminModel from "../models/SuperAdmin";
 
 const initJson = requireDir("../../data/init");
 
@@ -11,6 +13,12 @@ const loadUsers = async (): Promise<void> => {
 
         if (user.type === UserEnum.CLIENT)
             new UserModel(user).save();
+
+        if (user.type === UserEnum.ADMIN)
+            new AdminModel(user).save();
+
+        if (user.type === UserEnum.SUPER_ADMIN)
+            new SuperAdminModel(user).save();
     });
 };
 

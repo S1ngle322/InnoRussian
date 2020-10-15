@@ -13,6 +13,7 @@
     "email": "test_admin_email",
     "isVerified": true,
     "type": "ADMIN",
+    "permission": "WORDS_PROPOSAL",
     "password": "test_admin_password"
   },
 
