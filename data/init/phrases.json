@@ -1,0 +1,26 @@
+[
+  {
+    "_id": "5f8976873129e03f8207660f",
+    "phrase": "Hello",
+    "translation": "Привет",
+    "transcription": "Privet",
+    "additionalInfo": "Say when meet your friend",
+    "status": "INACTIVE"
+  },
+  {
+    "_id": "5f8976a96ae9ae287405d4e0",
+    "phrase": "How are you?",
+    "translation": "Как дела?",
+    "transcription": "Kak dela?",
+    "additionalInfo": "Ask this question to your friend",
+    "status": "INACTIVE"
+  },
+  {
+    "_id": "5f8976bc24544575584ad10c",
+    "phrase": "Bye",
+    "translation": "Пока",
+    "transcription": "Poka",
+    "additionalInfo": "Just Bye",
+    "status": "INACTIVE"
+  }
+]
