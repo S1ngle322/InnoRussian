@@ -1,0 +1,28 @@
+[
+  {
+    "_id": "5e7b353e4a55eb1e5c3f2007",
+    "username": "test_super_admin_username",
+    "email": "test_super_admin_email",
+    "isVerified": true,
+    "type": "SUPER_ADMIN",
+    "password": "test_super_admin_password"
+  },
+  {
+    "_id": "5e7b353e4a55eb1e5c3f2008",
+    "username": "test_admin_username",
+    "email": "test_admin_email",
+    "isVerified": true,
+    "type": "ADMIN",
+    "permission": "WORDS_PROPOSAL",
+    "password": "test_admin_password"
+  },
+
+  {
+    "_id": "5e7b353e4a55eb1e5c3f2009",
+    "username": "test_client_username",
+    "email": "test_client_email",
+    "isVerified": true,
+    "type": "CLIENT",
+    "password": "test_client_password"
+  }
+]

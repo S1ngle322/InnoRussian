@@ -6,6 +6,7 @@ enum DITags {
     EMAIL = "EMAIL",
     VERIFICATION_TOKEN = "VERIFICATION_TOKEN",
     USER = "USER",
+    PHRASE = "PHRASE",
 }
 
 export default DITags;
