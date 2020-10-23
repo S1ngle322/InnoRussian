@@ -6,6 +6,7 @@ export const IS_PROD = ENVIRONMENT === "NODE_ENV";
 export const SERVER_PORT = parseInt(process.env.SERVER_PORT, 3000);
 
 export const DB_URL = process.env.DB_URL;
+
 if (!DB_URL) {
     log.info("No mongo connection string. Set the DB_URL environment variable.");
 }

@@ -3,13 +3,13 @@ import { BaseModel } from "../types/classes/BaseModel";
 import { User } from "./User";
 
 export class RefreshToken extends BaseModel {
-    public user: User["_id"];
-    public value: string;
+    user: User["_id"];
+    value: string;
 }
 
 export const refreshTokenSchema = new mongoose.Schema(
     {
-        user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+        user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
         value: { type: String, default: "", required: true },
     },
     { timestamps: true },
