@@ -6,7 +6,7 @@ import log from '../utils/winston';
 import boolParser from 'express-query-boolean';
 import Controller from "../types/classes/Controller";
 import container from "../utils/containerCI";
-import Types from "../types/enums/DITypes"
+import Types from "../types/enums/DITypes";
 import errorsMiddleware from "../api/middlewares/errorsHandler";
 
 
