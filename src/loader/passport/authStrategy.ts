@@ -1,17 +1,17 @@
 import { Strategy as LocalStrategy } from 'passport-local';
 import passport from 'passport';
-import UserModel from '../models/User';
-import ValidationError from '../types/exceptions/ValidationError';
-import EntityNotFoundError from '../types/exceptions/EntityNotFoundError';
-import log from "../utils/winston";
-import NotImplementedError from "../types/exceptions/NotImplementedError";
+import UserModel from '../../models/User';
+import ValidationError from '../../types/exceptions/ValidationError';
+import EntityNotFoundError from '../../types/exceptions/EntityNotFoundError';
+import log from "../../utils/winston";
+import NotImplementedError from "../../types/exceptions/NotImplementedError";
 
 passport.serializeUser<any, any>((user, cb) => {
     cb(undefined, user._id);
 });
 
 passport.deserializeUser((id, cb) => {
-    UserModel.findById(id, (err, user) => {
+    UserModel.findById(id, (err: any, user: {}) => {
         cb(err, user);
     });
 });
