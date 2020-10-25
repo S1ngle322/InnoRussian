@@ -59,7 +59,6 @@ const auth = async () => {
                                 );
                             }
                         );
-                        log.info('in auth()6');
                         return cb(null, user);
                     }
                 } catch (e) {
