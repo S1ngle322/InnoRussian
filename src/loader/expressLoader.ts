@@ -4,6 +4,7 @@ import passport from 'passport';
 import { Response, Request, NextFunction, Router } from 'express';
 import cors from 'cors';
 import log from '../utils/winston';
+// @ts-ignore
 import boolParser from 'express-query-boolean';
 import Controller from "../types/classes/Controller";
 import container from "../utils/containerCI";
