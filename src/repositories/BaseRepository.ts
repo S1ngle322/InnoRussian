@@ -45,6 +45,7 @@ abstract class BaseRepository<T> implements Repository<T> {
     }
 
     public async create(item: T): Promise<T> {
+        // @ts-ignore
         let result = await this._model.create(item);
 
         result = result.toObject();
