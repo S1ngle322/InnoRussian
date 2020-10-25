@@ -4,6 +4,7 @@ import uniqueValidator from "mongoose-unique-validator";
 import UserType from "../types/enums/UserEnum";
 import { BaseModel } from "../types/classes/BaseModel";
 import Authorizable from "../types/interfaces/Authorizable";
+import log from "../utils/winston";
 
 type comparePasswordFunction = (
     candidatePassword: string,
@@ -34,8 +35,9 @@ userSchema.plugin(uniqueValidator);
 /**
  * Password hash middleware
  */
-userSchema.pre("save", function save(next) {
+userSchema.pre("save", function(next) {
     const user = this as User & mongoose.Document;
+
     if (!user.isModified("password")) {
         return next();
     }
@@ -64,10 +66,39 @@ userSchema.pre("save", function save(next) {
     });
 });
 
+userSchema.pre("findOneAndUpdate", function(next) {
+    const user: any = this;
+
+    if (!user._update || !user._update.password) {
+        return next();
+    }
+
+    bcrypt.genSalt(10, (err: mongoose.Error, salt: any) => {
+        if (err) {
+            return next(err);
+        }
+
+        bcrypt.hash(
+            user._update.password,
+            salt,
+            null,
+            (err: mongoose.Error, hash: string) => {
+                if (err) {
+                    return next(err);
+                }
+                user._update.password = hash;
+                next();
+            }
+        );
+    });
+});
+
 const comparePassword: comparePasswordFunction = function(
     candidatePassword,
     cb
 ) {
+    log.info(this.password);
+    log.info(candidatePassword);
     bcrypt.compare(
         candidatePassword,
         this.password,
