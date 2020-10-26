@@ -3,7 +3,7 @@ import {inject, injectable, named} from "inversify";
 import passport from "passport";
 import { IVerifyOptions } from "passport-local";
 import AuthService from "../../services/AuthService";
-import {BaseModel} from "classes/BaseModel";
+import {BaseModel} from "../../types/classes/BaseModel";
 import Controller from "../../types/classes/Controller";
 import Tags from "../../types/enums/DITags";
 import Types from "../../types/enums/DITypes";
