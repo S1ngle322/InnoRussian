@@ -3,7 +3,7 @@ import {inject, injectable, named} from "inversify";
 import passport from "passport";
 import { IVerifyOptions } from "passport-local";
 import AuthService from "../../services/AuthService";
-import {BaseModel} from "../../types/classes/BaseModel";
+import {BaseModel} from "classes/BaseModel";
 import Controller from "../../types/classes/Controller";
 import Tags from "../../types/enums/DITags";
 import Types from "../../types/enums/DITypes";
@@ -31,7 +31,7 @@ class AuthController extends Controller {
         this.router.post(this.path, this.localAuth);
     }
 
-    public localAuth = async (req: Request, res: Response, next: NextFunction) => {
+    localAuth = async (req: Request, res: Response, next: NextFunction) =>  {
         try {
             passport.authenticate("local",
                 { session: false },
