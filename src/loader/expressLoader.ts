@@ -4,13 +4,12 @@ import passport from 'passport';
 import { Response, Request, NextFunction, Router } from 'express';
 import cors from 'cors';
 import log from '../utils/winston';
-// @ts-ignore
 import boolParser from 'express-query-boolean';
 import Controller from "../types/classes/Controller";
 import container from "../utils/containerCI";
 import Types from "../types/enums/DITypes";
 import errorsMiddleware from "../api/middlewares/errorsHandler";
-import auth from "./authStrategy";
+import runPassport from "./passport";
 
 
 function loadControllers(): Router {
@@ -32,7 +31,7 @@ const expressLoader = async (app: express.Application): Promise<void> => {
     app.use(bodyParser.json());
     app.use(boolParser());
     app.use(passport.initialize());
-    await auth();
+    runPassport();
     app.use('/api', loadControllers());
     app.use(errorsMiddleware);
     app.use('/', (req: Request, res: Response, next: NextFunction) =>
