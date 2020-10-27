@@ -9,7 +9,7 @@ export class Phrase extends BaseModel {
     transcription: string;
     additionalInfo: string;
     status: Status;
-    //TODO add TOPIC and RELATED_WORDS classes
+    topic: string;
 }
 
 export const phraseSchema = new mongoose.Schema(
@@ -19,6 +19,7 @@ export const phraseSchema = new mongoose.Schema(
         transcription: { type: String, default: "", unique: false },
         additionalInfo: { type: String, default: "" },
         status: {type: String, default: "INACTIVE"},
+        topic: {type: String},
     }
 );
 
