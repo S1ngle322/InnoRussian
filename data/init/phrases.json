@@ -1,19 +1,12 @@
 [
   {
-    "_id": "5f8976873129e03f8207660f",
-    "phrase": "Hello",
-    "translation": "Привет",
-    "transcription": "Privet",
-    "additionalInfo": "Say when meet your friend",
-    "status": "INACTIVE"
-  },
-  {
     "_id": "5f8976a96ae9ae287405d4e0",
     "phrase": "How are you?",
     "translation": "Как дела?",
     "transcription": "Kak dela?",
     "additionalInfo": "Ask this question to your friend",
-    "status": "INACTIVE"
+    "status": "INACTIVE",
+    "topic": "Greetings"
   },
   {
     "_id": "5f8976bc24544575584ad10c",
@@ -21,6 +14,241 @@
     "translation": "Пока",
     "transcription": "Poka",
     "additionalInfo": "Just Bye",
-    "status": "INACTIVE"
+    "status": "INACTIVE",
+    "topic": "Saying Goodbye"
+  },
+  {
+    "_id": "5f97dd60d642c8e8ac786626",
+    "phrase": "Good morning",
+    "translation": "Доброе утро",
+    "transcription": "Dobroe utro",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Greetings"
+  },
+  {
+    "_id": "5f97ddd67035bd315bd450bb",
+    "phrase": "Good afternoon",
+    "translation": "Добрый день",
+    "transcription": "Dobri den",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Greetings"
+  },
+  {
+    "_id": "5f97de27e2ba1e3480ce5103",
+    "phrase": "Good evening",
+    "translation": "Добрый вечер",
+    "transcription": "Dobri vecher",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Greetings"
+  },
+  {
+    "_id": "5f97de3dccd08401c53d4b88",
+    "phrase": "Hello",
+    "translation": "Здравствуйте",
+    "transcription": "Zdrastvooyte",
+    "additionalInfo": "Official way to say ho to someone",
+    "status": "INACTIVE",
+    "topic": "Greetings"
+  },
+  {
+    "_id": "5f97de8fd365ef49db261c77",
+    "phrase": "Nice to see you!",
+    "translation": "Рад тебя видеть",
+    "transcription": "Rad teebya veedet'",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Greetings"
+  },
+  {
+    "_id": "5f97def18d36983a2e325d84",
+    "phrase": "Fine, thanks!",
+    "translation": "Спасибо, прекрасно!",
+    "transcription": "Spaseeba preekrasna!",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Greetings"
+  },
+  {
+    "_id": "5f97df44a62e40446b82c731",
+    "phrase": "Not so bad",
+    "translation": "Неплохо!",
+    "transcription": "Neeploha!",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Greetings"
+  },
+  {
+    "_id": "5f97e001ae3a9ae3d40d35a4",
+    "phrase": "What's your name?",
+    "translation": "Как Вас зовут?",
+    "transcription": "Kak vas zavoot?",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Greetings"
+  },
+  {
+    "_id": "5f97e07dff30aaf01a14999c",
+    "phrase": "My name is...",
+    "translation": "Меня зовут...",
+    "transcription": "Meenya zavoot...",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Greetings"
+  },
+  {
+    "_id": "5f97e0e28fbc398525d048ab",
+    "phrase": "Thank you",
+    "translation": "Спасибо",
+    "transcription": "Spaseeba",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Saying Thanks"
+  },
+  {
+    "_id": "5f97e1dd48c465bf3d3aeb95",
+    "phrase": "Thank you very much",
+    "translation": "Большое спасибо",
+    "transcription": "Bal'shoye spaseeba",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Saying Thanks"
+  },
+  {
+    "_id": "5f97e1d4581960c6cb84b621",
+    "phrase": "That's all right",
+    "translation": "Не за что",
+    "transcription": "Nyezashta",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Saying Thanks"
+  },
+  {
+    "_id": "5f97e22ec889f728bee1b6e1",
+    "phrase": "You're welcome",
+    "translation": "Пожалуйста",
+    "transcription": "Pazhalooysta",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Saying Thanks"
+  },
+  {
+    "_id": "5f97e5db0356b768b6240c19",
+    "phrase": "Sorry!",
+    "translation": "Извините",
+    "transcription": "Eezveeneete",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Apologies"
+  },
+  {
+    "_id": "5f97e62b5a4793a534eaa6fc",
+    "phrase": "Excuse me",
+    "translation": "Простите",
+    "transcription": "Prasteete",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Apologies"
+  },
+  {
+    "_id": "5f97e6534e5c532a741c5b00",
+    "phrase": "No harm",
+    "translation": "Ничего страшного",
+    "transcription": "Neechevo srashnava",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Apologies"
+  },
+  {
+    "_id": "5f97e71042ac700a16174609",
+    "phrase": "I'm sorry I (we) should be going",
+    "translation": "К сожалению, мне (нам) пора идти",
+    "transcription": "K sazhalyeneeyoo mnye (nam) para eettee",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Saying Goodbye"
+  },
+  {
+    "_id": "5f97e76aa6320d2dafab4e62",
+    "phrase": "Good-bye!",
+    "translation": "До свидания!",
+    "transcription": "Da sveedaneeya!",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Saying Goodbye"
+  },
+  {
+  "_id": "5f97e77126175b604cef9f89",
+  "phrase": "Good-bye!",
+  "translation": "До свидания!",
+  "transcription": "Da sveedaneeya!",
+  "additionalInfo": "",
+  "status": "INACTIVE",
+  "topic": "Saying Goodbye"
+  },
+  {
+    "_id": "5f97e78c7b6f5037feaeaf35",
+    "phrase": "See you",
+    "translation": "Увидимся",
+    "transcription": "Ooveedeemsya",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Saying Goodbye"
+  },
+  {
+    "_id": "5f97e7b74fd7c031709ea99c",
+    "phrase": "Have a nice trip!",
+    "translation": "Счастливого пути!",
+    "transcription": "Schasleevava pootee",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Saying Goodbye"
+  },
+  {
+    "_id": "5f97e831d5f2c64daac1c851",
+    "phrase": "Do you speak English?",
+    "translation": "Вы говорите по-английски?",
+    "transcription": "Vi gavareetye pa angleeskee?",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Comprehension"
+  },
+  {
+    "_id": "5f97e8603146c23710b5cb9f",
+    "phrase": "My Russian is bad",
+    "translation": "Я плохо говорю по-русски",
+    "transcription": "Ya plokha gavaryoo pa rooskee",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Comprehension"
+  },
+  {
+    "_id": "5f97e8dede33b353ca985b77",
+    "phrase": "Could you speak more slowly?",
+    "translation": "Говорите, пожалуйста, медленнее",
+    "transcription": "Gavareetye pazhalooysta myedleeney",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Comprehension"
+  },
+  {
+    "_id": "5f97e8e52c0762a7576329ba",
+    "phrase": "I don't understand",
+    "translation": "Я не понимаю",
+    "transcription": "Ya nee paneemayoo",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Comprehension"
+  },
+  {
+    "_id": "5f97e8fa8adcf059bc1d1cf3",
+    "phrase": "I understand",
+    "translation": "Я понимаю",
+    "transcription": "Ya paneemayoo",
+    "additionalInfo": "",
+    "status": "INACTIVE",
+    "topic": "Comprehension"
   }
 ]
