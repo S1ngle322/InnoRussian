@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import Repository from "../types/interfaces/Repository";
 import { unmanaged, injectable } from "inversify";
+import EntityNotFoundError from "../types/exceptions/EntityNotFoundError";
 
 @injectable()
 abstract class BaseRepository<T> implements Repository<T> {
@@ -29,7 +30,25 @@ abstract class BaseRepository<T> implements Repository<T> {
                 .exec()
         ).toObject();
 
+        if(!result)
+            throw new EntityNotFoundError(
+                "Can't find entity with such parameters!"
+            );
+
         return result;
+    }
+
+    public async findOne(item: T): Promise<T> {
+        const result = await this._model
+            .findOne(item).exec();
+
+        if (!result) {
+            throw new EntityNotFoundError(
+                "Can't find enity with such parameters"
+            );
+        }
+
+        return result.toObject();
     }
 
 
@@ -40,6 +59,11 @@ abstract class BaseRepository<T> implements Repository<T> {
             .exec();
 
         result = result.map(r => r.toObject());
+
+        if(!result)
+            throw new EntityNotFoundError(
+                "Can't find entity with such parameters!"
+            );
 
         return result;
     }
@@ -61,6 +85,11 @@ abstract class BaseRepository<T> implements Repository<T> {
                 .exec()
         ).toObject();
 
+        if(!result)
+            throw new EntityNotFoundError(
+                "Can't find entity with such parameters!"
+            );
+
         return result;
     }
 
@@ -70,6 +99,11 @@ abstract class BaseRepository<T> implements Repository<T> {
             .select("-__v")
             .exec();
         itemsToDelete = itemsToDelete.map(r => r.toObject());
+
+        if(!item)
+            throw new EntityNotFoundError(
+                "Can't find entity with such parameters!"
+            );
 
         await this._model.deleteMany(item).exec();
 
