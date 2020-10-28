@@ -13,6 +13,9 @@ import VerificationTokenRepository from "../repositories/VerificationTokenReposi
 import UserService from "../services/UserService";
 import EmailService from "../services/EmailService";
 import UserEmailMapper from "../mappers/UserEmailMapper";
+import PhraseMapper from "../mappers/PhraseMapper";
+import PhraseService from "../services/PhraseService";
+import PhraseController from "../api/controllers/PhraseController";
 
 const container = new Container();
 
@@ -27,6 +30,11 @@ container
     .bind<UserController>(Types.CONTROLLER)
     .to(UserController)
     .whenTargetNamed(Tags.USER);
+
+container
+    .bind<PhraseController>(Types.CONTROLLER)
+    .to(PhraseController)
+    .whenTargetNamed(Tags.PHRASE);
 
 //repositories
 
@@ -72,11 +80,21 @@ container
     .to(EmailService)
     .whenTargetNamed(Tags.EMAIL);
 
+container
+    .bind<PhraseService>(Types.SERVICE)
+    .to(PhraseService)
+    .whenTargetNamed(Tags.PHRASE);
+
 //mappers
 
 container
     .bind<UserEmailMapper>(Types.MAPPER)
     .to(UserEmailMapper)
     .whenTargetNamed(Tags.EMAIL);
+
+container
+    .bind<PhraseMapper>(Types.MAPPER)
+    .to(PhraseMapper)
+    .whenTargetNamed(Tags.PHRASE);
 
 export default container;
