@@ -8,6 +8,11 @@ import RefreshTokenRepository from "../repositories/RefreshTokenRepository";
 import AuthService from "../services/AuthService";
 import AuthController from "../api/controllers/AuthController";
 import RefreshTokenService from "../services/RefreshTokenService";
+import UserController from "../api/controllers/UserController";
+import VerificationTokenRepository from "../repositories/VerificationTokenRepository";
+import UserService from "../services/UserService";
+import EmailService from "../services/EmailService";
+import UserEmailMapper from "../mappers/UserEmailMapper";
 
 const container = new Container();
 
@@ -18,12 +23,22 @@ container
     .to(AuthController)
     .whenTargetNamed(Tags.AUTH);
 
+container
+    .bind<UserController>(Types.CONTROLLER)
+    .to(UserController)
+    .whenTargetNamed(Tags.USER);
+
 //repositories
 
 container
     .bind<RefreshTokenRepository>(Types.REPOSITORY)
     .to(RefreshTokenRepository)
     .whenTargetNamed(Tags.REFRESH_TOKEN);
+
+container
+    .bind<VerificationTokenRepository>(Types.REPOSITORY)
+    .to(VerificationTokenRepository)
+    .whenTargetNamed(Tags.VERIFICATION_TOKEN);
 
 container
     .bind<UserRepository>(Types.REPOSITORY)
@@ -34,7 +49,6 @@ container
     .bind<PhraseRepository>(Types.REPOSITORY)
     .to(PhraseRepository)
     .whenTargetNamed(Tags.PHRASE);
-
 
 //services
 
@@ -48,6 +62,21 @@ container
     .to(RefreshTokenService)
     .whenTargetNamed(Tags.REFRESH_TOKEN);
 
+container
+    .bind<UserService>(Types.SERVICE)
+    .to(UserService)
+    .whenTargetNamed(Tags.USER);
+
+container
+    .bind<EmailService>(Types.SERVICE)
+    .to(EmailService)
+    .whenTargetNamed(Tags.EMAIL);
+
 //mappers
+
+container
+    .bind<UserEmailMapper>(Types.MAPPER)
+    .to(UserEmailMapper)
+    .whenTargetNamed(Tags.EMAIL);
 
 export default container;

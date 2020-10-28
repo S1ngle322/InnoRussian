@@ -13,7 +13,7 @@ const initJson = requireDir("../../data/init");
 const loadUsers = async (): Promise<void> => {
     initJson.users.map((user: { type: UserEnum }) => {
 
-        if (user.type === UserEnum.CLIENT)
+        if (user.type === UserEnum.USER)
             new UserModel(user).save();
 
         if (user.type === UserEnum.ADMIN)

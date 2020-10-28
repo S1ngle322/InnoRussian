@@ -5,6 +5,7 @@ import UserType from "../types/enums/UserEnum";
 import { BaseModel } from "../types/classes/BaseModel";
 import Authorizable from "../types/interfaces/Authorizable";
 import log from "../utils/winston";
+import UserEnum from "../types/enums/UserEnum";
 
 type comparePasswordFunction = (
     candidatePassword: string,
@@ -28,7 +29,6 @@ export const userSchema = new mongoose.Schema(
         isVerified: { type: Boolean, default: false },
         type: { type: String, required: true, immutable: true },
     },
-    { discriminatorKey: "type", timestamps: true }
 );
 userSchema.plugin(uniqueValidator);
 
@@ -110,5 +110,5 @@ const comparePassword: comparePasswordFunction = function(
 
 userSchema.methods.comparePassword = comparePassword;
 
-const UserModel = mongoose.model<User & mongoose.Document>("User", userSchema);
+const UserModel = mongoose.model<User & mongoose.Document>(UserEnum.USER, userSchema);
 export default UserModel;
