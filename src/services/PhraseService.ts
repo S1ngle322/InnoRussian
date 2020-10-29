@@ -17,6 +17,16 @@ class PhraseService {
     @named(Tags.PHRASE)
     private phraseMapper: PhraseMapper;
 
+    async findAllPhrases(): Promise<PhraseDTO[]> {
+        const phrases = await this.phraseRepository.getAll();
+        return phrases.map(phrase => this.phraseMapper.toDTO(phrase));
+    }
+
+    async findPhraseById(id: string): Promise<PhraseDTO> {
+        const phrase = await this.phraseRepository.findById(id);
+        return this.phraseMapper.toDTO(phrase);
+    }
+
     public async addPhrase(
         phraseDTO: PhraseDTO
     ): Promise<PhraseDTO> {
@@ -27,6 +37,21 @@ class PhraseService {
             await this.phraseRepository.create(phraseDomain)
         );
         return phraseDto;
+    }
+
+    async updatePhrase(
+        id: string,
+        dto: PhraseDTO
+    ): Promise<PhraseDTO> {
+        const phrase = await this.phraseRepository.update(
+            id,
+            this.phraseMapper.toDomain(dto)
+        );
+        return this.phraseMapper.toDTO(phrase);
+    }
+
+    async removePhrase(id: string): Promise<void> {
+        await this.phraseRepository.delete({ _id: id } as Phrase);
     }
 }
 

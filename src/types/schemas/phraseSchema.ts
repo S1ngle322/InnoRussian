@@ -10,14 +10,15 @@ export const createPhraseSchema = Joi.object().keys({
         .required(),
     transcription: Joi.string(),
     additionalInfo: Joi.string(),
-   /* status: Joi.string()
+    status: Joi.string()
         .valid(Status)
-        .required()*/
 });
 
-export const updateUserSchema = Joi.object().keys({
+export const updatePhraseSchema = Joi.object().keys({
     phrase: Joi.string(),
     topic: Joi.string(),
     translation: Joi.string(),
-   /* status: Joi.string().valid(Status)*/
+    status: Joi.string().valid(Status),
+    transcription: Joi.string(),
+    additionalInfo: Joi.string()
 });
