@@ -31,7 +31,7 @@ class PhraseController extends Controller {
         );
         this.router.get(this.path, this.getAllPhrases);
         this.router.get(`${this.path}/:id`, this.getPhraseById);
-        this.router.get(`${this.path}/instance`, this.getPhrase);
+        this.router.get(`${this.path}/instance/:phrase`, this.getPhrase);
         this.router.put(
             `${this.path}/:id`,
             validator(updatePhraseSchema),
@@ -81,7 +81,7 @@ class PhraseController extends Controller {
     ): Promise<void> => {
         try {
             const phrase = await this.service.findPhrase(
-                req.body.phrase
+                req.params.phrase
             );
             res.send(phrase);
         } catch (error) {
