@@ -4,4 +4,4 @@ enum Status {
     INACTIVE = "INACTIVE",
 }
 
-export default Status
+export default Status;

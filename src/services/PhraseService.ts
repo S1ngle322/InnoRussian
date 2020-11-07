@@ -27,6 +27,13 @@ class PhraseService {
         return this.phraseMapper.toDTO(phrase);
     }
 
+    async findPhrase(myPhrase: string): Promise<PhraseDTO> {
+        const phraseObj = await this.phraseRepository.findOne({
+            phrase: myPhrase
+        } as Phrase);
+        return this.phraseMapper.toDTO(phraseObj);
+    }
+
     public async addPhrase(
         phraseDTO: PhraseDTO
     ): Promise<PhraseDTO> {
