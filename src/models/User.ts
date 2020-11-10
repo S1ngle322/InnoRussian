@@ -23,8 +23,8 @@ export class User extends BaseModel implements Authorizable {
 
 export const userSchema = new mongoose.Schema(
     {
-        username: { type: String, default: "", unique: true },
-        email: { type: String, default: "" },
+        username: { type: String, unique: true, required: false },
+        email: { type: String, default: "", unique: true },
         password: { type: String },
         isVerified: { type: Boolean, default: false },
         type: { type: String, required: true, immutable: true },
