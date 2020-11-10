@@ -31,6 +31,7 @@ class PhraseController extends Controller {
         );
         this.router.get(this.path, this.getAllPhrases);
         this.router.get(`${this.path}/:id`, this.getPhraseById);
+        this.router.get(`${this.path}/instance/:phrase`, this.getPhrase);
         this.router.put(
             `${this.path}/:id`,
             validator(updatePhraseSchema),
@@ -73,6 +74,24 @@ class PhraseController extends Controller {
         }
     };
 
+    getPhrase = async (
+        req: Request,
+        res: Response,
+        next: NextFunction
+    ): Promise<void> => {
+        try {
+            const phrase = await this.service.findPhrase(
+                req.params.phrase
+            );
+            res.send(phrase);
+        } catch (error) {
+            log.info(
+                `Caught an exception in: ${this.getPhrase.name} ${module.filename}`
+            );
+            next(error);
+        }
+    };
+
     createPhrase = async (
         req: Request,
         res: Response,
@@ -103,7 +122,8 @@ class PhraseController extends Controller {
                 req.params.id,
                 req.body as PhraseDTO,
             );
-            res.status(200).send(phrase);
+            const updatedPhrase = await this.service.findPhraseById(req.params.id);
+            res.status(200).send(updatedPhrase);
         } catch (error) {
             log.info(
                 `Caught an exception in: ${this.updatePhrase.name} ${module.filename}`

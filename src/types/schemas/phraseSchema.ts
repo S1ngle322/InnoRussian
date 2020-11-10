@@ -18,7 +18,7 @@ export const updatePhraseSchema = Joi.object().keys({
     phrase: Joi.string(),
     topic: Joi.string(),
     translation: Joi.string(),
-    status: Joi.string().valid(Status),
+    status: Joi.string().valid(Status.INACTIVE, Status.IN_PROGRESS, Status.LEARNT),
     transcription: Joi.string(),
     additionalInfo: Joi.string()
 });
