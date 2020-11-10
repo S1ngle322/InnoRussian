@@ -8,6 +8,7 @@ import { injectable } from 'inversify';
 class UserEmailMapper implements Mapper<User> {
     toDomain(dto: UserDTO): User {
         const user = new User();
+        user.username = dto.username;
         user.type = dto.type;
         user.password = dto.password;
         user.email = dto.email;
@@ -16,6 +17,7 @@ class UserEmailMapper implements Mapper<User> {
     toDTO(domain: User): UserDTO {
         const userDto = new UserDTO();
         userDto._id = domain._id;
+        userDto.username = domain.username;
         userDto.type = domain.type;
         userDto.email = domain.email;
         return userDto;
