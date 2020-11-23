@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsc",
     "prestart": "npm run build",
-    "start": "nodemon --max_old_space_size=2560 -r dotenv/config src/app.ts",
+    "start": "ts-node -r dotenv/config src/app.ts",
+    "dev": "nodemon --max_old_space_size=2560 -r dotenv/config src/app.ts",
     "initdata": "npm run build && ts-node -r dotenv/config src/utils/initdataScript.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

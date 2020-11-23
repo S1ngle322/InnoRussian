@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    container_name: web
+    ports:
+      - "3000:3000"
+    external_links:
+      - mongo
+    environment:
+      - WAIT_HOSTS=mongo:27017
+      - WAIT_HOSTS_TIMEOUT=600
+      - WAIT_SLEEP_INTERVAL=30
+      - WAIT_HOST_CONNECT_TIMEOUT=30
+
+
+  mongo:
+    container_name: mongo
+    image: mongo
+    #volumes:
+      #- mongodb:/data/db
+      #- mongodb_config:/data/configdb
+    ports:
+      - 27017:27017
+    #command: mongod
