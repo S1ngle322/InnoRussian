@@ -10,6 +10,7 @@ import Types from "../../types/enums/DITypes";
 import NotImplementedError from "../../types/exceptions/NotImplementedError";
 import Authorizable from "../../types/interfaces/Authorizable";
 import log from "../../utils/winston";
+import {User} from "../../models/User";
 
 @injectable()
 class AuthController extends Controller {
@@ -45,28 +46,24 @@ class AuthController extends Controller {
                             return next(err);
                         }
 
-                        if (eClient) {
+                        if (!eClient) {
                             // @ts-ignore
-                            req.logIn(eClient, {session: false}, async () => {
+                            return await res.json("no credentials provided");
+                        }
+                        else {
+                            // @ts-ignore
+                            req.login(eClient, {session: false}, async () => {
                                 if (err) {
                                     throw new NotImplementedError(
                                         "Not implemented error!",
                                     );
                                 }
-
-                                if (!eClient) {
-                                    return next(err);
-                                }
-
                                 const session = await this.authService.generateToken(
                                     this.getPayload(eClient),
                                 );
                                 // @ts-ignore
                                 return res.json(session);
                             });
-                        } else {
-                            // @ts-ignore
-                            return res.json("Cant find the user!");
                         }
                     } catch (e) {
                         return next(e);

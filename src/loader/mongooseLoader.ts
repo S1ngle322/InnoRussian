@@ -16,7 +16,8 @@ async function initializeModels(): Promise<void> {
 export default async (): Promise<Db> => {
     try {
         log.info(process.env.DB_URL);
-        const connection = await mongoose.connect('mongodb://mongo:27017/FSE', {
+//DOCKER!!!!        const connection = await mongoose.connect('mongodb://mongo:27017/FSE', {
+        const connection = await mongoose.connect(process.env.DB_URL, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useCreateIndex: true,

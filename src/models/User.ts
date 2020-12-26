@@ -97,8 +97,6 @@ const comparePassword: comparePasswordFunction = function(
     candidatePassword,
     cb
 ) {
-    log.info(this.password);
-    log.info(candidatePassword);
     bcrypt.compare(
         candidatePassword,
         this.password,
